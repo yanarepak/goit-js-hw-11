@@ -1,3 +1,4 @@
+'use strict'
 import { PixabayAPI } from './js/pixabay-api';
 import oneCardPhoto from './templates/oneCardPhoto.hbs';
 import Notiflix from 'notiflix';
