@@ -2,7 +2,7 @@ import { PixabayAPI } from './js/pixabay-api';
 import oneCardPhoto from './templates/oneCardPhoto.hbs';
 import Notiflix from 'notiflix';
 import 'simplelightbox/dist/simple-lightbox.min.css';
-import simpleLightbox from 'simplelightbox';
+import SimpleLightbox from 'simplelightbox';
 
 const searchFormEl = document.querySelector('#search-form');
 const galleryListEl = document.querySelector('.gallery');
@@ -29,7 +29,7 @@ const getPhotos = async function () {
     }
 
     galleryListEl.insertAdjacentHTML('beforeend', oneCardPhoto(data.hits));
-    simpleLightbox = new SimpleLightbox('.gallery a').refresh();
+    SimpleLightbox = new SimpleLightbox('.gallery a').refresh();
 
     if (pixabayApi.page >= totalPages) {
       loadMoreBtnEl.classList.add('is-hidden');
