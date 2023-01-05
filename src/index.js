@@ -3,7 +3,6 @@ import oneCardPhoto from './templates/oneCardPhoto.hbs';
 import Notiflix from 'notiflix';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 import SimpleLightbox from 'simplelightbox';
-import SimpleLightbox from 'simplelightbox';
 
 const searchFormEl = document.querySelector('#search-form');
 const galleryListEl = document.querySelector('.gallery');
@@ -12,7 +11,7 @@ const loadMoreBtnEl = document.querySelector('.load-more-btn');
 let totalPages = 0;
 
 const pixabayApi = new PixabayAPI();
-const SimpleLightbox = new SimpleLightbox('.gallery a')
+let SimpleLightbox = new SimpleLightbox('.gallery a')
 
 const getPhotos = async function () {
   try {
@@ -31,7 +30,7 @@ const getPhotos = async function () {
     }
 
     galleryListEl.insertAdjacentHTML('beforeend', oneCardPhoto(data.hits));
-    SimpleLightbox.refresh()
+    this.SimpleLightbox.refresh()
     if (pixabayApi.page >= totalPages) {
       loadMoreBtnEl.classList.add('is-hidden');
       return error;
