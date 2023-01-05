@@ -11,7 +11,7 @@ const loadMoreBtnEl = document.querySelector('.load-more-btn');
 let totalPages = 0;
 
 const pixabayApi = new PixabayAPI();
-let SimpleLightbox = new SimpleLightbox('.gallery a')
+let simpleLightbox = new SimpleLightbox('.gallery a')
 
 const getPhotos = async function () {
   try {
@@ -30,7 +30,7 @@ const getPhotos = async function () {
     }
 
     galleryListEl.insertAdjacentHTML('beforeend', oneCardPhoto(data.hits));
-    this.SimpleLightbox.refresh()
+    simpleLightbox.refresh();
     if (pixabayApi.page >= totalPages) {
       loadMoreBtnEl.classList.add('is-hidden');
       return error;
